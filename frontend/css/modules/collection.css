@@ -1,0 +1,70 @@
+div.collection {
+    text-align: center;
+    padding-top: 10px;
+}
+
+div.collection div.details {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+div.collection div.details p {
+    width: 70%;
+    margin: auto;
+}
+
+div.collection div.details div.social {
+    display: inline;
+    font-size: 11px;
+    font-style: italic;
+}
+
+div.collection div.details p.description {
+    font-family: Lato, Arial, Tahoma, Helvetica;
+    font-size: 11px;
+    line-height: 18px;
+}
+
+div.collection div.details ul.actions {
+    overflow: hidden;
+    width: 300px;
+    overflow: hidden;
+    height: 32px;
+    margin: 10px auto auto auto;
+}
+
+div.collection div.details ul.actions li {
+    float: left;
+    overflow: hidden;
+    width: 145px !important;
+    margin-right: 10px;
+}
+
+div.collection div.details ul.actions li:last-of-type {
+    margin-right: 0;
+}
+
+div.collection div.details ul.actions li button {
+    width: 100%;
+}
+
+div.collection div.details ul.actions li img {
+    height: 30px;
+    float: left;
+}
+
+div.collection div.details ul.actions li a {
+    height: 30px;
+    line-height: 30px;
+    padding-left: 12px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 70px;
+    text-align: left;
+    float: left;
+}
+
+div.collection div.details ul.actions li.person {
+    width: 50px;
+}
