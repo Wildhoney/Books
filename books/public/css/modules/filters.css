@@ -1,0 +1,27 @@
+ul.filters h2 {
+    font-family: Lato, Arial, Tahoma, Helvetica, sans-serif;
+    font-size: 24px;
+}
+
+ul.filters li {
+    background-color: rgba(0, 0, 0, .35);
+    display: inline;
+    margin-bottom: 5px;
+    cursor: pointer;
+    padding: 5px 20px;
+}
+
+ul.filters li:hover a {
+    color: rgba(0, 0, 0, .15) !important;
+}
+
+ul.filters li a {
+    transition: all .35s;
+    -o-transition: all .35s;
+    -moz-transition: all .35s;
+    -webkit-transition: all .35s;
+
+    color: white !important;
+    font-weight: bold;
+    text-decoration: none;
+}
