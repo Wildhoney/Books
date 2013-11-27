@@ -1,0 +1,13 @@
+{
+    "name": "wildhoney/books",
+    "description": "Alex & Alexa hackday application for our own little book club",
+    "authors": [
+        {
+            "name": "Adam Timberlake",
+            "email": "adam.timberlake@gmail.com"
+        }
+    ],
+    "require": {
+
+    }
+}
