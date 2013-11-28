@@ -9,20 +9,29 @@
     <p class="description">{{book.description}}</p>
 
     <ul class="actions">
+
         <li>
-            <button class="default" ng-show="!book.reader_id">Read&hellip;</button>
-            <button class="default" ng-show="book.reader_id">
+            <button class="default" ng-show="!book.reader_id" ng-click="startReading(book)">
+                Read&hellip;
+            </button>
+            <button class="default" ng-show="book.reader_id && !iAmReading(book)">
                 Nudge {{findUser(book.reader_id).first_name}}.
             </button>
+            <button class="default" ng-show="book.reader_id && iAmReading(book)" ng-click="finishedReading(book)">
+                Finished.
+            </button>
         </li>
+
         <li class="person" ng-show="book.reader_id">
             <img ng-src="{{findUser(book.reader_id).avatar}}" />
             <a>{{findUser(book.reader_id).first_name}}</a>
         </li>
+
         <li class="person" ng-show="!book.reader_id">
             <img src="images/guest.png" />
             <a>You?</a>
         </li>
+
     </ul>
 
 </div>

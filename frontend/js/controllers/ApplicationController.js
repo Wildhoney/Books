@@ -45,10 +45,11 @@
             };
 
             // When the full handshake has been completed.
-            socket.on('facebook/handshake/complete', function(token) {
+            socket.on('facebook/handshake/complete', function(token, userId) {
 
                 // Save the access token for personalised requests that we make.
-                auth.token = token;
+                auth.token  = token;
+                auth.userId = userId;
 
                 $location.path('/begin');
                 $scope.$apply();

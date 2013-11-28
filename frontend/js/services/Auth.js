@@ -14,6 +14,12 @@
         factory.token = null;
 
         /**
+         * @property userId
+         * @type {Number}
+         */
+        factory.userId = null;
+
+        /**
          * @method getUser
          * @return {$q.promise}
          */
