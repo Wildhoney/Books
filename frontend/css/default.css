@@ -69,7 +69,8 @@ input.default {
     transition: all .95s;
 }
 
-button.disabled {
+button.disabled,
+input.default.disabled {
     -webkit-filter: grayscale(100%);
     pointer-events: none;
 }
