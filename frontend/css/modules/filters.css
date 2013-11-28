@@ -9,10 +9,21 @@ ul.filters li {
     margin-bottom: 5px;
     cursor: pointer;
     padding: 5px 20px;
+    margin-right: 5px;
+
+    transition: all .7s;
+    -o-transition: all .7s;
+    -moz-transition: all .7s;
+    -webkit-transition: all .7s;
 }
 
 ul.filters li:hover a {
-    color: rgba(0, 0, 0, .15) !important;
+    /*color: rgba(0, 0, 0, .15) !important;*/
+}
+
+ul.filters li.active {
+    background-color: #ef5d5d !important;
+    color: white;
 }
 
 ul.filters li a {

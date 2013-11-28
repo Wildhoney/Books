@@ -2,12 +2,26 @@
     <li><a ng-click="modal('add-book.html')">Add Book</a></li>
 </ul>
 
-<ul class="sixteen columns filters">
-    <li><a>Programming</a></li>
-    <li><a>Novel</a></li>
-    <li><a>Factual</a></li>
-</ul>
+<section ng-controller="FiltersController">
 
-<div class="sixteen columns collection" ng-controller="BooksController" ng-include="'views/books.html'">
+    <ul class="sixteen columns filters">
 
-</div>
+        <li ng-click="setCategory('programming')" ng-class="{active: (category === 'programming')}">
+            <a>Programming</a>
+        </li>
+
+        <li ng-click="setCategory('novel')" ng-class="{active: (category === 'novel')}">
+            <a>Novel</a>
+        </li>
+
+        <li ng-click="setCategory('factual')" ng-class="{active: (category === 'factual')}">
+            <a>Factual</a>
+        </li>
+
+    </ul>
+
+    <div class="sixteen columns collection" ng-controller="BooksController" ng-include="'views/books.html'">
+
+    </div>
+
+</section>

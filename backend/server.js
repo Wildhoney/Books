@@ -75,7 +75,6 @@ connection.connect(function(error) {
 
                 // Insert the book into the database.
                 connection.query('INSERT INTO books SET ?', model, function(error, result) {
-                    console.log(error);
                     getBooks();
                 });
 

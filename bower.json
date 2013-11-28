@@ -18,6 +18,7 @@
     "skeleton": "*",
     "angular-route": "~1.2.3",
     "socket.io-client": "~0.9.16",
-    "underscore": "~1.5.2"
+    "underscore": "~1.5.2",
+    "crossfilter": "~1.3.6"
   }
 }

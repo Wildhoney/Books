@@ -13,12 +13,17 @@
             when('/begin', {
                 templateUrl: 'views/main.html',
                 resolve: {
-                    isConnected: ['$location', 'socket', 'auth',
-                    function isConnected($location, socket, auth) {
+                    isConnected: ['$location', '$rootScope', '$timeout', 'socket', 'auth',
+                    function isConnected($location, $rootScope, $timeout, socket, auth) {
 
-                        auth.getUser().then(function() {
+                        auth.getUser().then(function(data) {
                             socket.emit('data/all/request');
                         }).catch(function() {
+
+                            $timeout(function() {
+                                $rootScope.$broadcast('facebook/status/denied');
+                            }, 1000);
+
                             $location.path('/');
                         });
 

@@ -3,9 +3,9 @@
     /**
      * @controller ApplicationController
      */
-    $bookApp.controller('ApplicationController', ['$scope', '$location', 'auth', 'socket', 'data',
+    $bookApp.controller('ApplicationController', ['$scope', '$location', 'socket', 'auth',
 
-        function($scope) {
+        function($scope, $location, socket, auth) {
 
             /**
              * @property modalOpen
@@ -43,6 +43,31 @@
                 $scope.modalOpen = true;
                 $scope.$broadcast('modal/state/open', template);
             };
+
+            // When the full handshake has been completed.
+            socket.on('facebook/handshake/complete', function(token) {
+
+                // Save the access token for personalised requests that we make.
+                auth.token = token;
+
+                $location.path('/begin');
+                $scope.$apply();
+
+
+            });
+
+            /**
+             * @event facebook/status/connected
+             * @param response {Object}
+             */
+            $scope.$on('facebook/status/connected', function(event, response) {
+
+                auth.getUser().then(function(data) {
+                    data.auth = response.authResponse;
+                    socket.emit('facebook/handshake/initiate', data);
+                });
+
+            });
 
     }]);
 

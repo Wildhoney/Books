@@ -22,6 +22,7 @@
 
                 // Emit the event to add the book to the collection!
                 socket.emit('data/book/add', book, auth.token);
+                $scope.modal();
 
             };
 

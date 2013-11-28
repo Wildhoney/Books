@@ -1,9 +1,13 @@
-<div class="sixteen columns details unavailable" ng-repeat="book in books">
+<div class="sixteen columns details unavailable" ng-repeat="book in books | filter: $parent.category | orderBy: 'name'">
+
     <h3><a>{{book.name}}</a></h3>
+
     <div class="social">
         Added by <a>{{findUser(book.user_id).first_name}}</a>
     </div>
+
     <p class="description">{{book.description}}</p>
+
     <ul class="actions">
         <li>
             <button class="default" ng-show="!book.reader_id">Read&hellip;</button>
@@ -20,4 +24,5 @@
             <a>You?</a>
         </li>
     </ul>
+
 </div>
