@@ -11,7 +11,7 @@
              * @property category
              * @type {Boolean}
              */
-            $scope.category = false;
+            $scope.category = '';
 
             /**
              * @method setCategory
@@ -21,7 +21,7 @@
             $scope.setCategory = function setCategory(name) {
 
                 if ($scope.category === name) {
-                    $scope.category = false;
+                    $scope.category = '';
                     return;
                 }
 

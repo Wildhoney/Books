@@ -2,7 +2,7 @@
     One moment whilst we load the books&hellip;
 </span>
 
-<div class="sixteen columns details unavailable" ng-repeat="book in books | filter: $parent.category | orderBy: 'name'">
+<div class="sixteen columns details unavailable" ng-repeat="book in books | filter: { category: $parent.category } | orderBy: 'name'">
 
     <h3>
         <a ng-click="modal('book-info.html', { book: book, emit: 'book/data/load' })">
