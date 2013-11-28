@@ -8,10 +8,10 @@
         var factory = {};
 
         /**
-         * @property user
-         * @type {Object}
+         * @property token
+         * @type {String}
          */
-        factory.user = {};
+        factory.token = null;
 
         /**
          * @method getUser
@@ -38,32 +38,6 @@
 
                     defer.resolve(params);
 
-                });
-
-            });
-
-            return defer.promise;
-
-        };
-
-        /**
-         * @method process
-         * @param data {Object}
-         * @return {$q.promise}
-         */
-        factory.process = function(data) {
-
-            var defer   = $q.defer(),
-                url     = 'add/user';
-
-            factory.getUser().then(function(params) {
-
-                // Add the token data as well.
-                params.token = data.authResponse.accessToken;
-
-                // Perform the request for adding the user.
-                $http.post(url, params).then(function(data) {
-                    defer.resolve(data);
                 });
 
             });

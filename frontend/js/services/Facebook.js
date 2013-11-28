@@ -7,9 +7,9 @@
 
         $fb.init({
             appId      : '689697127716548',
-            status     : true, // check login status
-            cookie     : true, // enable cookies to allow the server to access the session
-            xfbml      : true  // parse XFBML
+            status     : true,
+            cookie     : true,
+            xfbml      : true
         });
 
         /**

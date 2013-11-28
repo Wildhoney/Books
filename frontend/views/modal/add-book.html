@@ -1,0 +1,36 @@
+<form name="form" ng-submit="add(book)" ng-controller="BookController" novalidate>
+
+    <h3>Add Book {{name}}</h3>
+
+    <p>Hey! Please add the name of your book, an informal description (make us want to read it!), and choose its category.</p>
+
+    <div>
+        <input ng-model="book.name" type="text" name="name" autocomplete="off" placeholder="Name..." required />
+        <comment ng-class="{valid: !(form.name.$invalid)}">Give your book a name...</comment>
+    </div>
+
+    <div>
+        <textarea ng-model="book.description" name="description" placeholder="Description..." required></textarea>
+        <comment ng-class="{valid: !(form.description.$invalid)}">Please enter a little description.</comment>
+    </div>
+
+    <ul>
+        <li>
+            <input type="radio" id="programming" value="programming" ng-model="book.category" />
+            <label for="programming">Programming</label>
+        </li>
+        <li>
+            <input type="radio" id="novel" value="novel" ng-model="book.category" />
+            <label for="novel">Novel</label>
+        </li>
+        <li>
+            <input type="radio" id="factual" value="factual" ng-model="book.category" />
+            <label for="factual">Factual</label>
+        </li>
+    </ul>
+
+    <div class="button-container">
+        <input type="submit" class="default" value="Add" />
+    </div>
+
+</form>

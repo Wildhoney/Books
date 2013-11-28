@@ -5,12 +5,13 @@
 }
 
 body, html {
-    height: 100% !important;
+    height: 100%;
     overflow: hidden;
-    background-color: lightgrey !important;
+    background-color: lightgrey;
 }
 
 div.page-container {
+    pointer-events: all;
     padding-top: 10px;
     height: 100%;
     text-align: center;
@@ -25,14 +26,15 @@ div.page-container {
 }
 
 div.page-container.background {
+    pointer-events: none;
     -webkit-filter: blur(1px);
     -webkit-transform: scale(0.95);
 }
 
 a {
     cursor: pointer;
-    color: black !important;
-    text-decoration: none !important;
+    color: black;
+    text-decoration: none;
 
     transition: .45s all;
     -o-transition: .45s all;
@@ -41,10 +43,11 @@ a {
 }
 
 a:hover {
-    color: #4d92cd !important;
+    color: #4d92cd;
 }
 
-button.default {
+button.default,
+input.default {
     background: none #5da6ea;
     border: 0;
     border-radius: 0;
@@ -61,10 +64,11 @@ button.default {
     transition: all .95s;
 }
 
-button.default:hover {
+button.default:hover,
+input.default:hover {
     background: none black;
-    border: 0 !important;
-    color: white !important;
+    border: 0;
+    color: white;
 }
 
 div.header {

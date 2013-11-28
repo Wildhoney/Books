@@ -37,11 +37,10 @@ div.collection div.details ul.actions li {
     float: left;
     overflow: hidden;
     width: 145px !important;
-    margin-right: 10px;
 }
 
-div.collection div.details ul.actions li:last-of-type {
-    margin-right: 0;
+div.collection div.details ul.actions li:first-of-type {
+    margin-right: 10px;
 }
 
 div.collection div.details ul.actions li button {

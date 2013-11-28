@@ -23,7 +23,7 @@ div.modal-container div.modal {
     z-index: 200;
     position: relative;
     text-align: left;
-    top: 150px;
+    top: 100px;
     margin: auto;
     width: 400px;
     box-shadow: 0 0 30px rgba(0, 0, 0, .25);
@@ -60,4 +60,83 @@ div.modal-container div.modal a.close {
 
 div.modal-container div.modal a.close:hover {
     color: black !important;
+}
+
+div.modal-container div.modal p {
+    font-family: Lato, Arial, Tahoma, Helvetica;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+div.modal-container div.modal form div {
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+div.modal-container div.modal form div:last-of-type,
+div.modal-container div.modal form div:last-of-type button {
+    margin-bottom: 0 !important;
+}
+
+div.modal-container div.modal form input {
+    height: 40px;
+    padding: 1px 15px 0 15px;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+div.modal-container div.modal form textarea {
+    resize: none;
+    padding: 10px 15px;
+    width: 100%;
+    font-size: 11px;
+    line-height: 18px;
+    margin-bottom: 0;
+}
+
+div.modal-container div.modal form comment {
+    background-color: #dedede;
+    color: rgba(0, 0, 0, .45);
+    padding: 1px 8px;
+    font-size: 11px;
+    width: 100%;
+    float: left;
+
+    transition: all .35s;
+    -o-transition: all .35s;
+    -moz-transition: all .35s;
+    -webkit-transition: all .35s;
+}
+
+div.modal-container div.modal form comment.valid {
+    background-color: #c5d2b4;
+    color: #35442a;
+}
+
+div.modal-container div.modal form ul {
+    padding-left: 10px;
+    margin-top: -10px;
+}
+
+div.modal-container div.modal form ul li {
+    float: left;
+    overflow: hidden;
+    width: auto;
+    margin-right: 25px;
+    white-space: nowrap;
+}
+
+div.modal-container div.modal form ul li input {
+    float: left;
+    overflow: hidden;
+    width: 20px;
+}
+
+div.modal-container div.modal form ul li label {
+    padding: 11px 0 0 4px;
+    float: left;
+}
+
+div.modal-container div.modal form div.button-container {
+    clear: both;
 }

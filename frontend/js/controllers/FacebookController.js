@@ -28,9 +28,15 @@
         };
 
         // When the full handshake has been completed.
-        socket.on('facebook/handshake/complete', function() {
+        socket.on('facebook/handshake/complete', function(token) {
+
+            // Save the access token for personalised requests that we make.
+            auth.token = token;
+
             $location.path('/begin');
             $scope.$apply();
+
+
         });
 
         /**
@@ -40,7 +46,7 @@
         $scope.$on('facebook/status/connected', function(event, response) {
 
             auth.getUser().then(function(data) {
-                data.token = response.authResponse.accessToken;
+                data.auth = response.authResponse;
                 socket.emit('facebook/handshake/initiate', data);
             });
 

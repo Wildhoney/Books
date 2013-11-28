@@ -11,7 +11,7 @@
                 Nudge {{findUser(book.reader_id).first_name}}.
             </button>
         </li>
-        <li class="person" ng-show="!!book.reader_id">
+        <li class="person" ng-show="book.reader_id">
             <img ng-src="{{findUser(book.reader_id).avatar}}" />
             <a>{{findUser(book.reader_id).first_name}}</a>
         </li>
