@@ -11,8 +11,7 @@
                 controller: 'FacebookController'
             }).
             when('/begin', {
-                templateUrl: 'views/application.html',
-                controller: 'ApplicationController',
+                templateUrl: 'views/main.html',
                 resolve: {
                     isConnected: ['$location', 'socket', 'auth',
                     function isConnected($location, socket, auth) {

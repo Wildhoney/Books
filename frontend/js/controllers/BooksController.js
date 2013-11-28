@@ -13,6 +13,13 @@
              */
             $scope.books = [];
 
+            /**
+             * @method findUser
+             * @param id {Number}
+             * @return {Object}
+             */
+            $scope.findUser = data.findUser;
+
             // When the books have been loaded.
             $scope.$on('data/books/loaded', function(event, data) {
                 $scope.books = data;

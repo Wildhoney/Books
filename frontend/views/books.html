@@ -1,18 +1,21 @@
 <div class="sixteen columns details unavailable" ng-repeat="book in books">
     <h3><a>{{book.name}}</a></h3>
     <div class="social">
-        Added by <a>{{book.first_name}}</a>
+        Added by <a>{{findUser(book.user_id).first_name}}</a>
     </div>
     <p class="description">{{book.description}}</p>
     <ul class="actions">
         <li>
-            <button class="default">Read&hellip;</button>
+            <button class="default" ng-show="!book.reader_id">Read&hellip;</button>
+            <button class="default" ng-show="book.reader_id">
+                Nudge {{findUser(book.reader_id).first_name}}.
+            </button>
         </li>
-        <!--<li class="person">-->
-        <!--<img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-frc3/c262.35.436.436/s160x160/230418_10152471401630500_376179427_n.jpg" />-->
-        <!--<a>Adam</a>-->
-        <!--</li>-->
-        <li class="person">
+        <li class="person" ng-show="!!book.reader_id">
+            <img ng-src="{{findUser(book.reader_id).avatar}}" />
+            <a>{{findUser(book.reader_id).first_name}}</a>
+        </li>
+        <li class="person" ng-show="!book.reader_id">
             <img src="images/guest.png" />
             <a>You?</a>
         </li>

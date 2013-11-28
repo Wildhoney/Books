@@ -33,7 +33,9 @@ connection.connect(function(error) {
         socket.on('data/all/request', function() {
 
             // Load all of the books into the application.
-            connection.query('SELECT * FROM books', function(error, result) {
+            connection.query('SELECT books.*, book_user.user_id AS reader_id ' +
+                             'FROM books LEFT JOIN book_user ' +
+                             'ON books.id = book_user.book_id', function(error, result) {
                 socket.emit('data/books/loaded', result);
             });
 
