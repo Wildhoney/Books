@@ -31,8 +31,6 @@
              * @return {Boolean}
              */
             $scope.iAmReading = function iAmReading(book) {
-                console.log(book.reader_id);
-                console.log(auth.userId);
                 return (book.reader_id === auth.userId);
             };
 

@@ -17,8 +17,8 @@ ul.filters li {
     -webkit-transition: all .7s;
 }
 
-ul.filters li:hover a {
-    /*color: rgba(0, 0, 0, .15) !important;*/
+ul.filters li:hover {
+    background-color: rgba(0, 0, 0, .55) !important;
 }
 
 ul.filters li.active {

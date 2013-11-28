@@ -1,0 +1,15 @@
+<img class="avatar" src="{{params.user.avatar}}" />
+<h3>{{params.user.first_name}} {{params.user.last_name}}</h3>
+
+<ul class="read">
+    <li>{{params.user.first_name}} has read a total of {{params.data.readCount}} book(s).</li>
+    <li ng-hide="!params.data.books.length">
+        {{params.user.first_name}} is currently reading:
+
+        <ul class="book-list">
+            <li ng-repeat="book in params.data.books | orderBy: 'name'">
+                {{book.name}}
+            </li>
+        </ul>
+    </li>
+</ul>

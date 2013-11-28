@@ -1,0 +1,11 @@
+<h3>{{params.book.name}}</h3>
+
+<ul class="read">
+    <li>Has been read {{params.data.length}} times(s).</li>
+</ul>
+
+<ul class="people">
+    <li ng-repeat="person in params.data">
+        <img ng-src="{{person.avatar}}" />
+    </li>
+</ul>

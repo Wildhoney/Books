@@ -34,7 +34,6 @@ div.page-container.background {
 }
 
 a {
-    cursor: pointer;
     color: black;
     text-decoration: none;
 
@@ -44,7 +43,11 @@ a {
     -webkit-transition: .45s all;
 }
 
-a:hover {
+a:not(.no-hover) {
+    cursor: pointer;
+}
+
+a:not(.no-hover):hover {
     color: #4d92cd;
 }
 
@@ -64,6 +67,11 @@ input.default {
     -moz-transition: all .95s;
     -o-transition: all .95s;
     transition: all .95s;
+}
+
+button.disabled {
+    -webkit-filter: grayscale(100%);
+    pointer-events: none;
 }
 
 button.default:hover,

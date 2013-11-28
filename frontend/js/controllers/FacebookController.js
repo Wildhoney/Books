@@ -3,9 +3,11 @@
     /**
      * @controller FacebookController
      */
-    $bookApp.controller('FacebookController', ['$scope', '$location', 'facebook',
+    $bookApp.controller('FacebookController', ['$scope', '$location', 'facebook', 'auth',
 
-    function($scope, $location, facebook) {
+    function($scope, $location, facebook, auth) {
+
+        auth.getUser();
 
             /**
              * @property connected
@@ -34,6 +36,11 @@
             });
 
             $scope.$on('facebook/status/denied', function() {
+                $scope.connected    = false;
+                $scope.checking     = false;
+            });
+
+            $scope.$on('facebook/status/unknown', function() {
                 $scope.connected    = false;
                 $scope.checking     = false;
             });

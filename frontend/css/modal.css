@@ -58,6 +58,11 @@ div.modal-container div.modal a.close {
     -webkit-transition: all .45s;
 }
 
+div.modal-container div.modal p {
+    clear: both;
+    overflow: hidden;
+}
+
 div.modal-container div.modal a.close:hover {
     color: black !important;
 }
@@ -139,4 +144,39 @@ div.modal-container div.modal form ul li label {
 
 div.modal-container div.modal form div.button-container {
     clear: both;
+}
+
+div.modal-container div.modal ul.read {
+    padding-top: 10px;
+    font-family: "Times New Roman", serif;
+    font-size: 15px;
+    color: rgba(0, 0, 0, .90);
+    clear: both;
+    overflow: hidden;
+}
+
+div.modal-container div.modal ul.read li {
+    margin-bottom: 5px;
+}
+
+div.modal-container div.modal ul.read li ul.book-list {
+    padding-top: 10px;
+}
+
+div.modal-container div.modal img.avatar {
+    float: left;
+    overflow: hidden;
+    margin: 0 16px 10px 0;
+}
+
+div.modal-container div.modal h3 {
+    float: left;
+    overflow: hidden;
+    padding-top: 8px;
+}
+
+div.modal-container div.modal ul.people li {
+    float: left;
+    overflow: hidden;
+    margin-right: 10px;
 }

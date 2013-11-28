@@ -30,9 +30,10 @@
             /**
              * @method modal
              * @param template {String}
+             * @param params {Object}
              * @return {void}
              */
-            $scope.modal = function modal(template) {
+            $scope.modal = function modal(template, params) {
 
                 if (!template) {
                     $scope.modalOpen = false;
@@ -41,7 +42,7 @@
                 }
 
                 $scope.modalOpen = true;
-                $scope.$broadcast('modal/state/open', template);
+                $scope.$broadcast('modal/state/open', template, params);
             };
 
             // When the full handshake has been completed.

@@ -1,9 +1,20 @@
+<span class="loading-books" ng-show="!books.length">
+    One moment whilst we load the books&hellip;
+</span>
+
 <div class="sixteen columns details unavailable" ng-repeat="book in books | filter: $parent.category | orderBy: 'name'">
 
-    <h3><a>{{book.name}}</a></h3>
+    <h3>
+        <a ng-click="modal('book-info.html', { book: book, emit: 'book/data/load' })">
+            {{book.name}}
+        </a>
+    </h3>
 
     <div class="social">
-        Added by <a>{{findUser(book.user_id).first_name}}</a>
+        Added by
+        <a ng-click="modal('user-info.html', { user: findUser(book.user_id), emit: 'user/data/load' })">
+            {{findUser(book.user_id).first_name}}
+        </a>
     </div>
 
     <p class="description">{{book.description}}</p>
@@ -14,8 +25,8 @@
             <button class="default" ng-show="!book.reader_id" ng-click="startReading(book)">
                 Read&hellip;
             </button>
-            <button class="default" ng-show="book.reader_id && !iAmReading(book)">
-                Nudge {{findUser(book.reader_id).first_name}}.
+            <button class="default disabled" ng-show="book.reader_id && !iAmReading(book)">
+                Being Read.
             </button>
             <button class="default" ng-show="book.reader_id && iAmReading(book)" ng-click="finishedReading(book)">
                 Finished.
@@ -24,12 +35,14 @@
 
         <li class="person" ng-show="book.reader_id">
             <img ng-src="{{findUser(book.reader_id).avatar}}" />
-            <a>{{findUser(book.reader_id).first_name}}</a>
+            <a ng-click="modal('user-info.html', { user: findUser(book.reader_id), emit: 'user/data/load' })">
+                {{findUser(book.reader_id).first_name}}
+            </a>
         </li>
 
         <li class="person" ng-show="!book.reader_id">
             <img src="images/guest.png" />
-            <a>You?</a>
+            <a class="no-hover">You?</a>
         </li>
 
     </ul>

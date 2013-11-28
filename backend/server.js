@@ -123,6 +123,49 @@ connection.connect(function(error) {
 
         });
 
+        // When we're requesting user data.
+        socket.on('user/data/load', function(data) {
+
+            connection.query('SELECT * FROM users ' +
+                             'INNER JOIN book_user ON book_user.user_id = users.id ' +
+                             'INNER JOIN books ON books.id = book_user.book_id ' +
+                             'WHERE book_user.user_id = ? ' +
+                             'GROUP BY book_id',
+                             [data.user.id], function(error, readingData) {
+
+                connection.query('SELECT * FROM users ' +
+                                 'INNER JOIN book_user ON book_user.user_id = users.id ' +
+                                 'INNER JOIN books ON books.id = book_user.book_id ' +
+                                 'WHERE active = 1 AND book_user.user_id = ? ' +
+                                 'GROUP BY book_user.book_id',
+                                 [data.user.id], function(error, bookData) {
+
+                    socket.emit('user/data/loaded', {
+                        readCount:  readingData.length,
+                        books:      bookData
+                    });
+
+                });
+
+            });
+
+        });
+
+        // When we're requesting book data.
+        socket.on('book/data/load', function(data) {
+
+            connection.query('SELECT * FROM book_user ' +
+                'INNER JOIN users ON users.id = book_user.user_id ' +
+                'WHERE book_id = ? ' +
+                'GROUP BY book_id, user_id',
+                [data.book.id], function(error, data) {
+
+                    socket.emit('book/data/loaded', data);
+
+                });
+
+        });
+
     });
 
 });
